@@ -13,7 +13,7 @@ export function generateStaticParams() {
   return GAMES.map((g) => ({ slug: g.slug }));
 }
 
-export async function generateMetadata({ params }: PageProps<"/oyinlar/[slug]">): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps<"/games/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   const game = getGame(slug);
   if (!game) return {};
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: PageProps<"/oyinlar/[slug]">)
   };
 }
 
-export default async function GamePage({ params }: PageProps<"/oyinlar/[slug]">) {
+export default async function GamePage({ params }: PageProps<"/games/[slug]">) {
   const { slug } = await params;
   const game = getGame(slug);
   if (!game) notFound();

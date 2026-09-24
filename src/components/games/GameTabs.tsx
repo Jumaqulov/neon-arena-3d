@@ -326,7 +326,7 @@ export default function GameTabs({ slug }: { slug: GameSlug }) {
                     </div>
                   </dl>
                   <Link
-                    href="/turnirlar"
+                    href="/tournaments"
                     aria-label={`NEON CUP #[SON], ${c.format} — turnirga yozilish`}
                     className="inline-flex h-12 shrink-0 items-center justify-center gap-2.5 self-start rounded-btn border border-lime px-5 text-[15px] font-semibold text-ink no-underline transition-colors duration-200 hover:bg-lime/10 lg:self-auto"
                   >
@@ -337,7 +337,7 @@ export default function GameTabs({ slug }: { slug: GameSlug }) {
               ))}
             </ul>
             <Link
-              href="/turnirlar"
+              href="/tournaments"
               data-anim
               className="inline-flex min-h-11 items-center gap-2.5 self-start font-mono text-[13px] font-bold uppercase tracking-[0.08em] text-lime no-underline transition-colors hover:text-lime-hover"
             >

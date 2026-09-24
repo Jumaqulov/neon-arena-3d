@@ -42,7 +42,7 @@ export function Button({
 export interface ButtonLinkProps
   extends CommonProps,
     Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "children" | "className" | "href"> {
-  /** internal path ("/oyinlar"), same-page hash ("#booking"), cross-page hash ("/#booking") or external URL */
+  /** internal path ("/games"), same-page hash ("#booking"), cross-page hash ("/#booking") or external URL */
   href: string;
 }
 

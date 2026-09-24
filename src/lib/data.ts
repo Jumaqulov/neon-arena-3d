@@ -12,14 +12,14 @@
 
 export interface NavItem {
   label: string;
-  href: "/" | "/oyinlar" | "/turnirlar" | "/profil";
+  href: "/" | "/games" | "/tournaments" | "/profile";
 }
 
 export const NAV: readonly NavItem[] = [
   { label: "Bosh sahifa", href: "/" },
-  { label: "O‘yinlar", href: "/oyinlar" },
-  { label: "Turnirlar", href: "/turnirlar" },
-  { label: "Profil", href: "/profil" },
+  { label: "O‘yinlar", href: "/games" },
+  { label: "Turnirlar", href: "/tournaments" },
+  { label: "Profil", href: "/profile" },
 ];
 
 /** Primary CTA target on every page. */

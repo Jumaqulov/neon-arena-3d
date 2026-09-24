@@ -22,7 +22,7 @@ const ShelfScene = dynamic(() => import("./ShelfScene"), {
 const LG_MOTION = "(min-width: 1024px) and (prefers-reduced-motion: no-preference)";
 
 /**
- * /oyinlar hero: every game box on a holographic ring (WebGL). Time spins the ring,
+ * /games hero: every game box on a holographic ring (WebGL). Time spins the ring,
  * scroll spins it faster, pushes the boxes apart and lifts the camera (4D); the headline
  * tilts back into depth. Genre chips jump to the catalog with that genre selected.
  */

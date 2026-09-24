@@ -242,7 +242,7 @@ export interface ProfileSceneProps {
 }
 
 /**
- * /profil hero environment (WebGL): neon grid floor, lime dust, a HUD halo framing the
+ * /profile hero environment (WebGL): neon grid floor, lime dust, a HUD halo framing the
  * member card and two holo cubes. Camera dollies forward/down with scroll; bloom on desktop.
  * Load ONLY through next/dynamic({ ssr: false }).
  */

@@ -127,7 +127,7 @@ const FRAME =
 export default function GameCover({ game, n }: { game: Game; n: number }) {
   const num = String(n).padStart(2, "0");
   return (
-    <Link href={`/oyinlar/${game.slug}`} className="group/cover block rounded-card no-underline">
+    <Link href={`/games/${game.slug}`} className="group/cover block rounded-card no-underline">
       <div className="game-3d">
         {getGameArt(game.slug) ? <ArtCover game={game} num={num} /> : <TypeCover game={game} num={num} />}
       </div>

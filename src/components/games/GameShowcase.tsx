@@ -50,7 +50,7 @@ const HUD_MONO = "font-mono text-[12px] font-medium uppercase leading-[1.4] trac
 const CORNER = "absolute size-6 border-lime/40";
 
 /**
- * /oyinlar/[slug] hero: breadcrumb, sticky WebGL game box (left) that turns with scroll —
+ * /games/[slug] hero: breadcrumb, sticky WebGL game box (left) that turns with scroll —
  * cover → spine → back — while the copy, quick specs and the "back of the box" facts
  * scroll past on the right (parallax). Below 1024px the box sits between title and details.
  * Games with official artwork get their wide key art as a full-bleed backdrop (the page's
@@ -306,7 +306,7 @@ export default function GameShowcase({ slug }: { slug: GameSlug }) {
               >
                 Shu o‘yin uchun joy band qilish
               </ButtonLink>
-              <ButtonLink href="/turnirlar" size="lg" variant="secondary" className="w-full sm:w-auto">
+              <ButtonLink href="/tournaments" size="lg" variant="secondary" className="w-full sm:w-auto">
                 Turnirga yozilish
               </ButtonLink>
             </div>

@@ -46,7 +46,7 @@ export default function FavoriteGames() {
           title={F.title}
           lead={F.lead}
           action={
-            <ButtonLink href="/oyinlar" variant="secondary" size="lg" iconRight={<IconArrowRight />}>
+            <ButtonLink href="/games" variant="secondary" size="lg" iconRight={<IconArrowRight />}>
               {F.all}
             </ButtonLink>
           }
@@ -57,7 +57,7 @@ export default function FavoriteGames() {
             <li key={g.slug}>
               <Tilt max={8} scale={1.02} glare className="h-[360px] rounded-card sm:h-[400px]">
                 <Link
-                  href={`/oyinlar/${g.slug}`}
+                  href={`/games/${g.slug}`}
                   className="group/game absolute inset-0 block rounded-card text-ink no-underline [transform-style:preserve-3d]"
                 >
                   <div

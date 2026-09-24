@@ -204,7 +204,7 @@ export interface GameBoxSceneProps {
   fallback?: ReactNode;
 }
 
-/** Hero scene for /oyinlar/[slug]. Load with next/dynamic({ ssr: false }). */
+/** Hero scene for /games/[slug]. Load with next/dynamic({ ssr: false }). */
 export default function GameBoxScene({ slug, progress, onReady, fallback = null }: GameBoxSceneProps) {
   const reduced = useReducedMotion();
   return (

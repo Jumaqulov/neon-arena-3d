@@ -27,7 +27,7 @@ export default function GameBreadcrumb({ game }: { game: Game }) {
     <nav aria-label="Sahifa yo‘li" className="relative z-10">
       <ol className="flex flex-wrap items-center gap-x-3 font-mono text-[13px] font-medium uppercase leading-[1.4] tracking-[0.08em] sm:text-[14px]">
         <li className="flex items-center gap-3">
-          <Link href="/oyinlar" className={CRUMB}>
+          <Link href="/games" className={CRUMB}>
             O‘yinlar
           </Link>
           <span aria-hidden="true" className="text-dim">

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * /profil — member profile.
+ * /profile — member profile.
  *  1. Hero: WebGL arena + 3D member card (tilt, flip to [QR KOD], turns away on scroll)
  *  2. Kabinet: tabs Bronlar / Yutuqlar / Sozlamalar
  *  3. Sevimli o‘yinlar

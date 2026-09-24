@@ -31,7 +31,7 @@ const XP_SEGMENTS =
   "repeating-linear-gradient(90deg, transparent 0 calc(10% - 2px), rgba(10,11,16,.55) calc(10% - 2px) 10%)";
 
 /**
- * /profil hero: WebGL arena environment + the 3D member card (tilt, flip) on the left,
+ * /profile hero: WebGL arena environment + the 3D member card (tilt, flip) on the left,
  * identity / level / XP / stat tiles on the right.
  *
  * Motion (GSAP, desktop + mobile, never under reduced motion):
@@ -218,7 +218,7 @@ export default function ProfileHero() {
               {PROFILE.tierBadge}
             </span>
             <Link
-              href="/turnirlar"
+              href="/tournaments"
               className="inline-flex min-h-11 items-center gap-2 px-1 text-[15px] font-medium text-ink no-underline transition-colors hover:text-lime"
             >
               {PROFILE.rank.label} <PhText text={PROFILE.rank.value} />

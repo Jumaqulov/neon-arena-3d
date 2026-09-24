@@ -163,7 +163,7 @@ export default function GamesSection() {
             lead={GAMES_SECTION.lead}
             leadPlacement="below"
             action={
-              <ButtonLink href="/oyinlar" variant="secondary" iconRight={<IconArrowRight />}>
+              <ButtonLink href="/games" variant="secondary" iconRight={<IconArrowRight />}>
                 {GAMES_SECTION.allLabel}
               </ButtonLink>
             }

@@ -85,7 +85,7 @@ export default function GameCard({ game }: { game: Game }) {
       className="group/card h-[380px] rounded-card shadow-[0_24px_40px_-28px_rgba(0,0,0,.9)] transition-shadow duration-300 hover:shadow-[0_44px_70px_-30px_rgba(0,0,0,.95),0_0_36px_rgba(196,248,42,.16)] sm:h-[400px] xl:h-[420px]"
     >
       <Link
-        href={`/oyinlar/${game.slug}`}
+        href={`/games/${game.slug}`}
         aria-label={`${game.title}, ${game.genre} — o‘yin sahifasi`}
         className="absolute inset-0 block rounded-card text-ink no-underline [transform-style:preserve-3d]"
       >

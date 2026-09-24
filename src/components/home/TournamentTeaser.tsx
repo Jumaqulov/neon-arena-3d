@@ -107,10 +107,10 @@ export default function TournamentTeaser() {
                     />
                   </div>
                   <div className="flex flex-wrap items-center gap-3">
-                    <ButtonLink href="/turnirlar" variant="secondary">
+                    <ButtonLink href="/tournaments" variant="secondary">
                       {NEXT_TOURNAMENT.allCta}
                     </ButtonLink>
-                    <ButtonLink href="/turnirlar" iconRight={<IconArrowRight />}>
+                    <ButtonLink href="/tournaments" iconRight={<IconArrowRight />}>
                       {NEXT_TOURNAMENT.registerCta}
                     </ButtonLink>
                   </div>

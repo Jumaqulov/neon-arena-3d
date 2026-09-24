@@ -73,7 +73,7 @@ export interface ShelfSceneProps {
   split: boolean;
 }
 
-/** Library hero scene for /oyinlar. Load with next/dynamic({ ssr: false }). */
+/** Library hero scene for /games. Load with next/dynamic({ ssr: false }). */
 export default function ShelfScene({ progress, split }: ShelfSceneProps) {
   const reduced = useReducedMotion();
   const cx = split ? 3.8 : 0;

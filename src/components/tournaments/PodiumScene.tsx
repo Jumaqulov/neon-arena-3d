@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * /turnirlar hero scene: a WebGL podium that RISES OUT OF the neon grid on load
+ * /tournaments hero scene: a WebGL podium that RISES OUT OF the neon grid on load
  * (blocks are clipped at the floor plane), with lime edges + bloom, a holo-cube trophy,
  * floating player plates and dust. On scroll ("4D": the time-based sway / spin keeps
  * running) it tilts away, sinks back into the grid, the plates float apart, the trophy

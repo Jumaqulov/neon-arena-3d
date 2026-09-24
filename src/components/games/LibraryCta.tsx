@@ -6,7 +6,7 @@ import Parallax from "@/components/motion/Parallax";
 import BigOutlineWord from "@/components/motion/BigOutlineWord";
 import { CssGridFloor } from "@/components/three/fallbacks";
 
-/** Closing band of /oyinlar: the grid floor zooms in under the headline as it enters. */
+/** Closing band of /games: the grid floor zooms in under the headline as it enters. */
 export default function LibraryCta() {
   return (
     <section aria-labelledby="games-cta-title" className="section-y relative isolate overflow-hidden border-t border-line">
@@ -30,7 +30,7 @@ export default function LibraryCta() {
             <ButtonLink href={BOOKING_HREF} size="lg" iconRight={<IconArrowRight />}>
               Joy band qilish
             </ButtonLink>
-            <ButtonLink href="/turnirlar" size="lg" variant="secondary">
+            <ButtonLink href="/tournaments" size="lg" variant="secondary">
               Turnirlar
             </ButtonLink>
           </div>

@@ -32,7 +32,7 @@ export interface ButtonStyleOptions {
 
 /**
  * Button class string — usable from Server Components too (e.g. on a plain <Link>/<a>).
- *   <Link href="/oyinlar" className={buttonClasses({ variant: "secondary" })}>Barchasi</Link>
+ *   <Link href="/games" className={buttonClasses({ variant: "secondary" })}>Barchasi</Link>
  */
 export function buttonClasses({
   variant = "primary",
