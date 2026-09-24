@@ -1,0 +1,347 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   NEON ARENA — design tokens (Tailwind v4 @theme)
+   Colors  → bg-ground, bg-surface, bg-raised, bg-panel, border-line, border-line-strong,
+             text-ink, text-muted, text-dim, bg-lime / text-lime, text-lime-hover, bg-live
+   Fonts   → font-display (Unbounded), font-sans (IBM Plex Sans), font-mono (JetBrains Mono)
+   Radii   → rounded-chip (4px), rounded-btn (10px), rounded-card (16px)
+   Shadows → shadow-glow, shadow-glow-lg, shadow-card, shadow-card-hover
+   Text    → text-shadow-glow
+   Ease    → ease-out-expo, ease-spring
+   ========================================================================== */
+@theme {
+  --color-ground: #0a0b10;
+  --color-ground-2: #0e1016;
+  --color-surface: #11131b;
+  --color-raised: #171a24;
+  --color-panel: #1b1e2a;
+  --color-line: #262a38;
+  --color-line-strong: #3a4052;
+  --color-ink: #eef0f6;
+  --color-muted: #a3a9bc;
+  --color-dim: #7c8397;
+  --color-lime: #c4f82a;
+  --color-lime-hover: #e2ff8a;
+  --color-lime-deep: #627c15;
+  --color-live: #ff5a4e;
+
+  --radius-chip: 4px;
+  --radius-btn: 10px;
+  --radius-card: 16px;
+
+  --shadow-glow: 0 0 24px rgba(196, 248, 42, 0.35);
+  --shadow-glow-lg: 0 0 48px rgba(196, 248, 42, 0.4);
+  --shadow-card: 0 12px 32px rgba(0, 0, 0, 0.35);
+  --shadow-card-hover: 0 40px 80px rgba(0, 0, 0, 0.55), 0 0 32px rgba(196, 248, 42, 0.14);
+
+  --text-shadow-glow: 0 0 18px rgba(196, 248, 42, 0.45);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  --animate-grid-move: grid-move 3s linear infinite;
+  --animate-spin-cube: spin-cube 18s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-live: pulse-live 1.6s ease-in-out infinite;
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-sway: sway 14s ease-in-out infinite;
+  --animate-scan: scan 4.8s linear infinite;
+
+  /* CSS game box (no-WebGL stand-in): slow 3D sway + cover scan line (REF/Game.dc.html) */
+  @keyframes sway {
+    0%, 100% { transform: rotateX(-10deg) rotateY(30deg); }
+    50% { transform: rotateX(-5deg) rotateY(-18deg); }
+  }
+  @keyframes scan {
+    0% { transform: translateY(0); opacity: 0; }
+    8% { opacity: 0.6; }
+    92% { opacity: 0.6; }
+    100% { transform: translateY(476px); opacity: 0; }
+  }
+
+  @keyframes grid-move {
+    from { background-position: 0 0; }
+    to { background-position: 0 60px; }
+  }
+  @keyframes spin-cube {
+    from { transform: rotateX(-20deg) rotateY(0deg); }
+    to { transform: rotateX(-20deg) rotateY(360deg); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes pulse-live {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+/* Font families use the CSS variables that next/font puts on <html>. */
+@theme inline {
+  --font-display: var(--font-unbounded), "Arial Black", sans-serif;
+  --font-sans: var(--font-plex), "Segoe UI", sans-serif;
+  --font-mono: var(--font-jetbrains), Consolas, monospace;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+@layer base {
+  :root {
+    --header-h: 64px;
+    --page-gutter: 16px;
+    color-scheme: dark;
+  }
+  @media (width >= 40rem) {
+    :root { --page-gutter: 24px; }
+  }
+  @media (width >= 48rem) {
+    :root { --page-gutter: 40px; }
+  }
+  @media (width >= 64rem) {
+    :root { --header-h: 88px; }
+  }
+  @media (width >= 80rem) {
+    :root { --page-gutter: 80px; }
+  }
+
+  html {
+    background: var(--color-ground);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.55;
+    overflow-x: clip;
+    min-height: 100svh;
+  }
+
+  ::selection {
+    background: var(--color-lime);
+    color: var(--color-ground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-lime);
+    outline-offset: 3px;
+  }
+
+  [id] {
+    scroll-margin-top: calc(var(--header-h) + 16px);
+  }
+
+  /* Sections that receive programmatic focus after an in-page jump (scrollAndFocus):
+     focus only moves the Tab starting point — no outline around a whole section. */
+  [data-scroll-focus]:focus {
+    outline: none;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-dim);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+}
+
+/* ==========================================================================
+   Layout / type utilities (usable as Tailwind classes, with variants)
+   ========================================================================== */
+
+/* Centered page container: max 1440px, gutters 16 / 24 / 40 / 80px */
+@utility container-page {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+}
+
+/* Vertical rhythm for top-level <section>s: 80px mobile → 128px desktop */
+@utility section-y {
+  padding-block: 80px;
+  @media (width >= 48rem) { padding-block: 112px; }
+  @media (width >= 80rem) { padding-block: 128px; }
+}
+@utility section-y-sm {
+  padding-block: 56px;
+  @media (width >= 48rem) { padding-block: 80px; }
+}
+/* First section on a page: clears the fixed header */
+@utility page-top {
+  padding-top: calc(var(--header-h) + 48px);
+  @media (width >= 48rem) { padding-top: calc(var(--header-h) + 72px); }
+}
+
+/* Mono label: 13px uppercase, tracked, muted */
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+/* Display type (Unbounded, uppercase, tight) — fluid sizes */
+@utility display-2xl {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(44px, 9vw, 132px);
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+@utility display-xl {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(40px, 7vw, 96px);
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+@utility display-lg {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(32px, 4.6vw, 64px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+@utility display-md {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(24px, 2.6vw, 36px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+@utility display-sm {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+/* Body lead paragraph */
+@utility lead {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-muted);
+  @media (width >= 48rem) { font-size: 19px; }
+}
+
+/* Outlined (stroked) text */
+@utility text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-lime);
+}
+@utility text-outline-faint {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(196, 248, 42, 0.14);
+}
+
+/* Static CSS perspective grid (used by CssGridFloor) */
+@utility grid-lines {
+  background-image:
+    repeating-linear-gradient(0deg, rgba(196, 248, 42, 0.22) 0 1px, transparent 1px 60px),
+    repeating-linear-gradient(90deg, rgba(196, 248, 42, 0.22) 0 1px, transparent 1px 60px);
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+}
+
+/* ==========================================================================
+   Components (plain classes)
+   ========================================================================== */
+@layer components {
+  /* Placeholder chip for unknown facts: [NARX], [MANZIL] … */
+  .ph {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.875em;
+    line-height: 1.35;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    color: var(--color-muted);
+    background: rgba(238, 240, 246, 0.04);
+    border: 1px dashed var(--color-line-strong);
+    border-radius: 4px;
+    padding: 1px 6px;
+    vertical-align: baseline;
+    text-transform: none;
+    -webkit-text-stroke: 0;
+    text-shadow: none;
+  }
+
+  .skip-link {
+    position: fixed;
+    left: 16px;
+    top: 12px;
+    z-index: 100;
+    transform: translateY(-160%);
+    padding: 12px 20px;
+    border-radius: 10px;
+    background: var(--color-lime);
+    color: var(--color-ground);
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+  .skip-link:focus-visible,
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   Lenis (smooth scroll) — mirrors lenis/dist/lenis.css
+   ========================================================================== */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+.lenis [data-lenis-prevent],
+.lenis [data-lenis-prevent-wheel],
+.lenis [data-lenis-prevent-touch] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Reduced motion: kill CSS animation/transition globally
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

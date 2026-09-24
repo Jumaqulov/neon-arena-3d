@@ -1,0 +1,32 @@
+{
+  "valorant": {
+    "title": "VALORANT PC",
+    "productId": "9NKCCHCFTHV2",
+    "source": "https://www.xbox.com/en-US/games/store/_/9NKCCHCFTHV2",
+    "retrieved": "2026-09-24",
+    "images": {
+      "cover": "https://store-images.s-microsoft.com/image/apps.24285.13663857844271189.42ac3116-ce9d-40e2-939f-ca94e72c04a8.bc2c8a77-f251-47c2-908a-6b9d61b7f479",
+      "hero": "https://store-images.s-microsoft.com/image/apps.56412.13663857844271189.42ac3116-ce9d-40e2-939f-ca94e72c04a8.a593939f-3d22-458f-8e5b-23473a61e93e"
+    }
+  },
+  "fortnite": {
+    "title": "Fortnite",
+    "productId": "BT5P2X999VH2",
+    "source": "https://www.xbox.com/en-US/games/store/_/BT5P2X999VH2",
+    "retrieved": "2026-09-24",
+    "images": {
+      "cover": "https://store-images.s-microsoft.com/image/apps.8083.70702278257994163.7f7e49d8-bf13-4838-8f72-548542e51d08.a1739f68-9454-40eb-ba60-81ec2d35e413",
+      "hero": "https://store-images.s-microsoft.com/image/apps.25635.70702278257994163.7f7e49d8-bf13-4838-8f72-548542e51d08.d3460053-6d86-4c4d-98ec-f661529c0fc9"
+    }
+  },
+  "ea-sports-fc": {
+    "title": "EA SPORTS FC™ 26 Xbox Series X|S",
+    "productId": "9P9FTXPKQ35P",
+    "source": "https://www.xbox.com/en-US/games/store/_/9P9FTXPKQ35P",
+    "retrieved": "2026-09-24",
+    "images": {
+      "cover": "https://store-images.s-microsoft.com/image/apps.10782.14143997528953872.6dedfcb1-25c9-4700-a587-b5e8d2190c68.12c48214-554d-4f98-a995-c19b9101d1aa",
+      "hero": "https://store-images.s-microsoft.com/image/apps.35717.14143997528953872.6dedfcb1-25c9-4700-a587-b5e8d2190c68.a2f0289a-bfc2-427b-a171-7326ed42c9f2"
+    }
+  }
+}
